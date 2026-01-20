@@ -1,5 +1,21 @@
-﻿@{
+﻿@using Lesson5_SecondMvcApp.Models
+
+@{
     Layout = null;
+
+    var product = new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Komputer",
+                Description = "Programist",
+                Price = 1999
+            };
+
 }
 
+
 Something page
+
+<h1>@product.Id</h1>
+<h1>@product.Name</h1>
+<h1>@product.Price</h1>
