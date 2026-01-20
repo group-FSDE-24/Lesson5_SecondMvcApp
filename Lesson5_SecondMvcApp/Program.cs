@@ -1,8 +1,12 @@
+using Lesson5_SecondMvcApp.Services.Abstracts;
+using Lesson5_SecondMvcApp.Services.Concretes;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IRepository, ProductRepository>();
 
 
 var app = builder.Build();

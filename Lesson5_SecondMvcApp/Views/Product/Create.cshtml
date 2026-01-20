@@ -1,0 +1,85 @@
+﻿@using Lesson5_SecondMvcApp.Controllers
+
+@model Lesson5_SecondMvcApp.Models.Product
+
+@*
+    TagHelper
+
+    1. HtmlHelper => sintaxisi cetindi deye, coxda istifade edilmir
+    2. TagHelper  => daha cox gunumuzde istifade edilir
+
+*@
+
+@*
+    Front Terefden Back-e melumat gondermek usullari
+
+    1. input-lara name veririk, Methodda da bu parametr-e uygun name-leri duzgun olaraq yazmaliyir
+    2. Methodda parametr kimi class yaziriq, Classin property name-i uygun olaraq input-un name-ne yaziriq
+    3. TagHelper vasitesi ile gondermek
+*@
+
+<form method="post" asp-controller="@nameof(ProductController.Product)"
+      asp-action="@nameof(ProductController.CreateProduct)">
+   
+      @*
+
+      <div class="form-control mb-4">
+        <label>Product Name</label>
+        <input type="text"
+               name="Name"
+               class="form-control mt-3"
+               id="productName"
+               placeholder="Enter Product Name" />
+    </div>
+
+    <div class="form-control">
+        <label>Product Price</label>
+        <input type="text"
+               name="Price"
+               class="form-control mt-3"
+               id="productPrice"
+               placeholder="Enter Product Price" />
+    </div>
+
+    <div class="form-control">
+        <label>Product Description</label>
+        <input type="text"
+               class="form-control mt-3"
+               name="Description"
+               id="productDescription"
+               placeholder="Enter Product Description" />
+    </div>
+    
+    <email>Gelecekde olacaq</email>
+
+    <button type="submit"
+            class="btn btn-primary m-3">
+        Yadda saxla
+    </button>
+      *@
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Product Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter Product Name" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Product Price</label>
+        <input asp-for="Price" type="number" step="0.01" class="form-control"
+               placeholder="Enter Product Price" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Product Description</label>
+        <input asp-for="Description" class="form-control"
+               placeholder="Enter Product Description" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+
+        Yadda saxla
+    </button>
+
+
+</form>
+
